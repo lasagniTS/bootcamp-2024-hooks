@@ -1,0 +1,31 @@
+.table-container {
+	width: 100%;
+	padding: 20px;
+	display: flex;
+	justify-content: center;
+}
+
+.exercise-table {
+	width: 100%;
+	max-width: 800px;
+	border-collapse: collapse;
+	background-color: #f9f9f9;
+	border: 1px solid #ddd;
+	box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.exercise-table th {
+	padding: 12px 15px;
+	text-align: center;
+	border: 1px solid #ddd;
+}
+
+.bad {
+	background-color: #cf4523;
+	color: white;
+}
+
+.good {
+	background-color: #4caf50;
+	color: white;
+}
