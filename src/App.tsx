@@ -1,6 +1,6 @@
 import "./App.css";
 import logoTs from "./assets/logo-ts.png";
-import ExerciseTable from "./components/exercise-table";
+import ExampleTable from "./components/example-table";
 
 function App() {
 	return (
@@ -12,7 +12,7 @@ function App() {
 			</div>
 			<h1>Bootcamp 2024: Hooks</h1>
 
-			<ExerciseTable />
+			<ExampleTable />
 		</>
 	);
 }

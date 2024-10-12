@@ -1,7 +1,7 @@
-import ExampleRow from "./exercise-row";
-import "./exercise-table.css";
+import ExampleRow from "./example-row";
+import "./example-table.css";
 
-const ExerciseTable = () => {
+const ExampleTable = () => {
 	return (
 		<div className="table-container">
 			<table className="exercise-table">
@@ -18,4 +18,4 @@ const ExerciseTable = () => {
 	);
 };
 
-export default ExerciseTable;
+export default ExampleTable;

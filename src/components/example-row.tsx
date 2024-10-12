@@ -1,5 +1,5 @@
 import { lazy, Suspense, useId, useState } from "react";
-import "./exercise-row.css";
+import "./example-row.css";
 
 const ExampleRow = ({ name, category, description }: { category: string; name: string; description?: string }) => {
 	const rowId = useId();
