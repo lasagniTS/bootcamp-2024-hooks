@@ -1,0 +1,132 @@
+{
+	"$schema": "./node_modules/@biomejs/biome/configuration_schema.json",
+	"vcs": {
+		"enabled": true,
+		"clientKind": "git",
+		"defaultBranch": "main",
+		"useIgnoreFile": true
+	},
+	"files": {
+		"include": [
+			"./src/**",
+			"vite.config.ts",
+			"package.json"
+		],
+		"ignore": [
+			"**/*.ignore.*"
+		]
+	},
+	"organizeImports": {
+		"enabled": true
+	},
+	"formatter": {
+		"enabled": true,
+		"formatWithErrors": false,
+		"indentStyle": "tab",
+		"indentWidth": 2,
+		"lineEnding": "lf",
+		"lineWidth": 140
+	},
+	"linter": {
+		"enabled": true,
+		"rules": {
+			"recommended": true,
+			"complexity": {
+				"noExcessiveCognitiveComplexity": "error",
+				"noVoid": "error",
+				"useSimplifiedLogicExpression": "error"
+			},
+			"correctness": {
+				"noNewSymbol": "error",
+				"noUndeclaredVariables": "error",
+				"noUnusedImports": "warn",
+				"noUnusedVariables": "warn",
+				"useExhaustiveDependencies": "warn",
+				"useHookAtTopLevel": "error"
+			},
+			"performance": {
+				"noBarrelFile": "warn",
+				"noReExportAll": "warn"
+			},
+			"style": {
+				"noDefaultExport": "warn",
+				"noImplicitBoolean": "error",
+				"noNamespace": "error",
+				"noNamespaceImport": "warn",
+				"noNegationElse": "warn",
+				"noNonNullAssertion": "warn",
+				"noShoutyConstants": "error",
+				"useBlockStatements": "error",
+				"useCollapsedElseIf": "error",
+				"useFilenamingConvention": {
+					"level": "error",
+					"options": {
+						"strictCase": false,
+						"requireAscii": true,
+						"filenameCases": [
+							"kebab-case"
+						]
+					}
+				},
+				"useFragmentSyntax": "error",
+				"useNamingConvention": {
+					"level": "error",
+					"options": {
+						"strictCase": false,
+						"requireAscii": true,
+						"enumMemberCase": "CONSTANT_CASE"
+					}
+				},
+				"useShorthandArrayType": "error",
+				"useSingleCaseStatement": "error"
+			},
+			"suspicious": {
+				"noArrayIndexKey": "warn",
+				"noEmptyBlockStatements": "error",
+				"noExplicitAny": "warn",
+				"noSkippedTests": "error",
+				"useAwait": "error"
+			},
+			"nursery": {
+				"useImportRestrictions": "off",
+				"useSortedClasses": "error"
+			}
+		}
+	},
+	"javascript": {
+		"formatter": {
+			"enabled": true,
+			"arrowParentheses": "always",
+			"bracketSameLine": false,
+			"bracketSpacing": true,
+			"indentWidth": 4,
+			"indentStyle": "tab",
+			"jsxQuoteStyle": "double",
+			"quoteProperties": "preserve",
+			"quoteStyle": "double",
+			"semicolons": "always",
+			"trailingCommas": "all",
+			"lineEnding": "lf",
+			"lineWidth": 140
+		},
+		"parser": {
+			"unsafeParameterDecoratorsEnabled": false
+		}
+	},
+	"json": {
+		"parser": {
+			"allowComments": true,
+			"allowTrailingCommas": false
+		}
+	},
+	"css": {
+		"formatter": {
+			"enabled": true,
+			"indentStyle": "tab",
+			"indentWidth": 2,
+			"lineEnding": "lf",
+			"lineWidth": 80,
+			"quoteStyle": "double"
+		}
+	}
+}
