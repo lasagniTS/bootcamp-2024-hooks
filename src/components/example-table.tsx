@@ -12,7 +12,9 @@ const ExampleTable = () => {
 						<th className="good">Good way</th>
 					</tr>
 				</thead>
-				<tbody>{/* <ExampleRow description="Automatic Counter" name="00-counter" category="use-effects" /> */}</tbody>
+				<tbody>
+					<ExampleRow description="Automatic Counter" name="00-counter" category="use-effects" />
+				</tbody>
 			</table>
 		</div>
 	);
