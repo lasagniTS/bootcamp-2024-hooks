@@ -14,6 +14,7 @@ const ExampleTable = () => {
 				</thead>
 				<tbody>
 					<ExampleRow description="Automatic Counter" name="00-counter" category="use-effects" />
+					<ExampleRow description="Filter a list" name="01-filter" category="use-effects" />
 				</tbody>
 			</table>
 		</div>
