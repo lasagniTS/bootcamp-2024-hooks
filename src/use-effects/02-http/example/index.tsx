@@ -11,7 +11,7 @@ const TodoElement = ({ todo }: { todo: Todo }) => {
 	);
 };
 
-const TodoList = () => {
+const VeryBadTodoList = () => {
 	const { data, loading, error, fetch } = useTodos();
 
 	useEffect(() => {
@@ -32,4 +32,4 @@ const TodoList = () => {
 	);
 };
 
-export default TodoList;
+export default VeryBadTodoList;

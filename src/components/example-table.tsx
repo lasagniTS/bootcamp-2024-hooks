@@ -13,6 +13,7 @@ const ExampleTable = () => {
 					</tr>
 				</thead>
 				<tbody>
+					<ExampleRow description="Lifecycle" name="03-lifecycle" category="use-effects" />
 					<ExampleRow description="Automatic Counter" name="00-counter" category="use-effects" />
 					<ExampleRow description="Make a query" name="02-http" category="use-effects" />
 					<ExampleRow description="Filter a list" name="01-filter" category="use-effects" />

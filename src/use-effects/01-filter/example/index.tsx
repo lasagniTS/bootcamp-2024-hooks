@@ -1,42 +1,53 @@
-import { useState } from "react";
+//@ts-ignore
 
-// Example product data
-const productList = [
-	{ id: 1, name: "Apple", price: 1.5 },
-	{ id: 2, name: "Banana", price: 0.9 },
-	{ id: 3, name: "Orange", price: 1.2 },
-	{ id: 4, name: "Mango", price: 2.0 },
-];
+import { useEffect, useState } from "react";
 
-function FilterableProductList() {
-	// State for the search input
-	const [searchTerm, setSearchTerm] = useState("");
+const UserList = ({ users, filterUsers }) => {
+	const [filteredUsers, setFilteredUsers] = useState(users);
 
-	// Filtering function without memoization
-	const filterProducts = () => {
-		console.log("I'm searching for: ", searchTerm);
-		return productList.filter((product) => product.name.toLowerCase().includes(searchTerm.toLowerCase()));
-	};
-
-	// Handle search input changes
-	const handleSearchChange = (e) => {
-		setSearchTerm(e.target.value);
-	};
+	useEffect(() => {
+		console.log("Filtering users...");
+		setFilteredUsers(filterUsers(users));
+	}, [filterUsers, users]);
 
 	return (
 		<div>
-			<h1>Product List</h1>
-			<input type="text" placeholder="Search products..." value={searchTerm} onChange={handleSearchChange} />
+			<h2>User List</h2>
 			<ul>
-				{/* Render the filtered list */}
-				{filterProducts().map((product) => (
-					<li key={product.id}>
-						{product.name} - ${product.price.toFixed(2)}
-					</li>
+				{filteredUsers.map((user) => (
+					<li key={user.id}>{user.name}</li>
 				))}
 			</ul>
 		</div>
 	);
-}
+};
 
-export default FilterableProductList;
+const UserManagement = () => {
+	const [users] = useState([
+		{ id: 1, name: "John Doe" },
+		{ id: 2, name: "Jane Smith" },
+		{ id: 3, name: "Alice Johnson" },
+		{ id: 4, name: "Bob Brown" },
+	]);
+
+	const [filter, setFilter] = useState("");
+
+	const handleFilterChange = (e) => {
+		setFilter(e.target.value);
+	};
+
+	// Funzione di filtraggio passata al componente figlio
+	const filterUsers = (users) => {
+		return users.filter((user) => user.name.toLowerCase().includes(filter.toLowerCase()));
+	};
+
+	return (
+		<div>
+			<h1>User Management</h1>
+			<input type="text" placeholder="Filter users by name" value={filter} onChange={handleFilterChange} />
+			<UserList users={users} filterUsers={filterUsers} />
+		</div>
+	);
+};
+
+export default UserManagement;

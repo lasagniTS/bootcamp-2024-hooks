@@ -20,6 +20,17 @@
 	border: 1px solid #ddd;
 }
 
+@media (prefers-color-scheme: dark) {
+	.exercise-table {
+		background-color: #333;
+		color: white;
+	}
+
+	.exercise-table th {
+		background-color: #444;
+	}
+}
+
 .bad {
 	background-color: #cf4523;
 	color: white;
